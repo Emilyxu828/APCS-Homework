@@ -8,7 +8,7 @@ public class Driver {
 
     int space = s.indexOf(" ");      /* returns 4*/
 
-	/*
+    /*
     String first = "";
 	int i = 0;
 
@@ -25,6 +25,6 @@ public class Driver {
     */
     String first = s.substring(0, space);
     System.out.println("first name is: " + first);
-	String last = s.substring(space + 1);
-	System.out.println("last name is: " +last);
+    String last = s.substring(space + 1);
+    System.out.println("last name is: " +last);
 }}
