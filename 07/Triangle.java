@@ -3,3 +3,10 @@ public class Triangle{
 	int a = x;
 	int b = 1;
 	String s = "";
+	while (b<=x){
+	    while (a>b){
+		s = s+"*";
+		a= a-1;
+
+
+		   
