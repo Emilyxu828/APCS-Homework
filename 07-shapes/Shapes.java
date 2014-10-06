@@ -63,8 +63,7 @@ _ * * * *
 * * * * *
 */
     }
-    
-       public String tri3(int h){
+   public String tri3(int h){
 	int a = 1;
 	int b = 1;
         int c = h;
@@ -248,5 +247,6 @@ _ * * * *				 _ _ _ *
 * * * * *
 */
     }
-
+  
+      
 }
