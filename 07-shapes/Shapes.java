@@ -102,7 +102,7 @@ _ * * * * * _
     }
 
 
-    public String tri4(h) {
+    public String tri4(int h) {
         int a = h;
 	int b = h;
         int c = 1;
@@ -168,7 +168,7 @@ _ * * * * * _
 	while (a > 0) {
 	    b = a;
             c = n - a;
-            while (c > 0) {
+            while (c >=0 ) {
                 stars = stars + " ";
                 c = c-1;
             }
