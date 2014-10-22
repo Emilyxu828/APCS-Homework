@@ -13,7 +13,7 @@ public class Driver{
 		Scanner sc = new Scanner(System.in);
 		String input = "";
 		String charType = "";
-		while (character.getName().equals("")){
+		/*while (character.getName().equals("")){
 		    while (input.equals("")){
 			System.out.println("Hello valiant peasant! What is your name?");
 			input = sc.nextLine();
@@ -32,28 +32,28 @@ public class Driver{
 				input = "";
 			}
 		    }
-		}
+		}*/
 		input = "";
 		while (input.equals("")){
-			System.out.println("Well, " + character.getName() + ", are you a Berserker, a Necromancer, an Assassin, or an Archer?");
+			System.out.println("Well, "/* + character.getName()*/ + ", are you a Berserker, a Necromancer, an Assassin, or an Archer?");
 			input = sc.nextLine();
 			if (input.equals("Berserker")){
-				berserker.inputName(character.getName());
+				//berserker.inputName(character.getName());
 				charType = "Berserker";
 				berserker.boost();
 			}
 			else if (input.equals("Necromancer")){
-				necromancer.inputName(character.getName());
+				//necromancer.inputName(character.getName());
 				charType = "Necromancer";
 				necromancer.boost();
 			}
 			else if (input.equals("Assassin")){
-				assassin.inputName(character.getName());
+				//assassin.inputName(character.getName());
 				charType = "Assassin";
 				assassin.boost();
 			}
 			else if (input.equals("Archer")){
-				archer.inputName(character.getName());
+				//archer.inputName(character.getName());
 				charType = "Archer";
 				archer.boost();
 			}
@@ -64,7 +64,7 @@ public class Driver{
 		}
 		input = "";
 		String enc = "false";
-		/*while (input.equals("")){
+		while (input.equals("")){
 			System.out.println("Would you like to check your stats?");
 			input = sc.nextLine();
 			if (input.equals("Yes")){
@@ -81,13 +81,13 @@ public class Driver{
 					System.out.println(archer.getStats());
 				}
 			}
-		}*/
-		System.out.println("You find yourself in a cave. You have just woken up and you are incredibly confused.");
+		}
+		/*System.out.println("You find yourself in a cave. You have just woken up and you are incredibly confused.");
 		System.out.println("You try to think really hard about what you last remember but that hurts your head so you stop.");
 		System.out.println("The pain in your head reminds you that the last thing you remember is an ogre kidnapping your family.");
 		System.out.println("Like, your entire family.");
 		System.out.println("Stupid brute probably knocked you out too and dragged you to his lair.");
-		System.out.println("He can't be far from here.");
+		System.out.println("He can't be far from here.");*/
 		while (input.equals("")){
 			System.out.println("What would you like to do?");
 			input = sc.nextLine();
@@ -108,7 +108,7 @@ public class Driver{
 				double oppDEF = ogre.getDEF() - 10;
 				double playerATK,playerhealth,playerDEF,playerINT,playerDEX,playerLUK,playermana,playermaxhealth,playermaxmana;
 				if (charType.equals("Berserker")){
-			    	playerhealth = berserker.gethealth();
+			    	playerhealth = berserker.Gethealth();
 			    	playermaxhealth = berserker.getmaxhealth();
 				   	playerATK = berserker.getSTR();
 					playerDEF = berserker.getDEF() - 10;
@@ -163,9 +163,6 @@ public class Driver{
 						System.out.println("The ogre charges at you and you dodge, but he manages to smash his club into your stomach. Ouch, you k bro?");
 						System.out.println("You lost " + oppdmg + " HP and you now have " + playerhealth + " HP left.");
 					}
-					enc = "false";
-				}
-			}
 				else if (word1.equals("Flee")){
 					System.out.println("You decide to flee from the enemy.");
 					enc = "false";
@@ -178,10 +175,12 @@ public class Driver{
 					System.out.println("You can't do that.");
 				}
 				input = "";
+				}
+			}
 			if (word1.equals("Move")){
 				System.out.println("You go " + word2 + " a few steps.");
 				float ogreEnc = rand.nextFloat();
-				if (ogreEnc*100>75){
+				if (ogreEnc*100>0){
 					System.out.println("You see an ogre in the distance.");
 					enc = "true";
 				}

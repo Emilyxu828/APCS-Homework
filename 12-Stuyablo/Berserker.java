@@ -22,6 +22,33 @@ public class Berserker extends BaseChar{
         s = s + "Your luck is " + this.getLUK();
         return s;
     }
+    public double Getmaxhealth(){
+	    return super.getmaxhealth();
+    }
+    public double Getmaxmana(){
+        return super.getmaxmana();
+    }
+    public double Gethealth(){
+        return this.gethealth();
+    }
+    public double Getmana(){
+        return super.getmana();
+    }
+    public double GetSTR(){
+        return super.getSTR();
+    }
+    public double GetDEF(){
+        return super.getDEF();
+    }
+    public double GetINT(){
+        return super.getINT();
+    }
+    public double GetDEX(){
+        return super.getDEX();
+    }
+    public double GetLUK(){
+        return super.getLUK();
+    }
     public void mutilate(BaseChar other){
         System.out.println(this + " hacks away at  Ogre, grunting with each yank.");
         
