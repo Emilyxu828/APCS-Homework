@@ -2,7 +2,7 @@ public class Driver {
     public static void main (String[] args){
 	startingarrays hello = new startingarrays();
     
-    System.out.println(hello.frontPiece({1,2,3,4,5}));
+	System.out.println(hello.frontPiece({1,2,3,4,5}));
 	System.out.println(hello.frontPiece({}));
 	System.out.println(hello.frontPiece({45,3}));
 
