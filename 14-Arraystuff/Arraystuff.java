@@ -42,12 +42,12 @@ public class Arraystuff{
     }
 
     public int maxval(){
-	int w = 0;
+	int w = a[0];
 	for (int i=0; i<a.length-1; i++){
-	    if (a[i+1]>a[i])
+	    if (a[i+1]>w)
 		w = a[i+1];
 	    else 
-		w = a[i];
+		w = w;
 	}
 	return w;
     }
