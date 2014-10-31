@@ -257,6 +257,34 @@ public class Arraystuff{
 	return freq;
     }
 
+    /*---------- for 10/30/14 ----------*/
+    // This code only works for half of the codingbat tests :( I'm still trying to figure out the quirks
+
+    public int maxMirror(int[] nums) {
+	int arraylength = nums.length;
+	int w = 0;
+	int i = 0;
+	while (i<arraylength){
+	    if (nums[i] == nums[arraylength-1-i]){
+		w = w + 1;
+		i++;
+	    }
+	    else {
+		if (nums[i+1] == nums[arraylength-1-i]){
+		    w = w + 1;
+		    i++;
+		}
+		else if (nums[i] == nums[arraylength-1-i-1]){
+		    w = w + 1;
+		    i++;
+		}
+		else
+		    break;
+	    }
+	}
+	return w;
+    }
+
     public static void main(String[] args){
 	Arraystuff as = new Arraystuff();
 	System.out.println(as);

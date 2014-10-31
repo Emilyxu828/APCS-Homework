@@ -21,6 +21,7 @@ public class Arraystuff{
 	this(100);
     }
     /*---------- Methods ----------*/
+
     public String toString(){
 	String s = "";
 	for (int i=0; i<a.length; i++)
@@ -30,6 +31,8 @@ public class Arraystuff{
 	return s;
     }
 
+            /*----- 14 -----*/
+   
     public int find(int value){
 	int q = -1;
 	for (int i=0; i<a.length; i++){
@@ -53,6 +56,8 @@ public class Arraystuff{
 	}
 	return w;
     }
+
+            /*----- 14b (worked with Jason) -----*/
 
     public int sum67(int[] nums) {
 	int sum = 0;
@@ -255,17 +260,17 @@ public class Arraystuff{
     public static void main(String[] args){
 	Arraystuff as = new Arraystuff();
 	System.out.println(as);
-	System.out.println(as.find(65));
-	System.out.println(as.find(66));
-	System.out.println(as.find(123));
-        System.out.println(as.maxval());
-	System.out.println("sum67 with array {1, 6, 4, 5, 3}: " + as.sum67(test1));
-	System.out.println("more14 with array {1, 1, 4, 4, 1}: " + as.more14(test2));
-	System.out.println("tenRun with array {10, 1, 9, 20}: " + as.printArray(as.tenRun(test3)));
-	System.out.println("tripleUp with array {1, 2, 4, 5, 7, 6, 5, 6, 7, 6}: " + as.tripleUp(test4));
-	System.out.println("canBalance with array {1, 2, 3, 1, 0, 2, 3}: " + as.canBalance(test5));
-	System.out.println("seriesUp with int 6:  " + as.printArray(as.seriesUp(6)));
-	System.out.println("freq with int 4: " + as.freq(2)); 
+	System.out.println("location of 65 in the array: " + as.find(65));
+	System.out.println("location of 66 in the array: " + as.find(66));
+	System.out.println("location of 67 in the array: " + as.find(123));
+        System.out.println("maxval in array: " + as.maxval());
+	System.out.println("sum67 with array {3, 5, 6, 7, 2, 1, 6, 4, 5, 7, 3}: " + as.sum67({3, 5, 6, 7, 2, 1, 6, 4, 5, 7, 3}));
+	System.out.println("more14 with array {1, 2, 8, 25, 1, 4, 7, 4, 1}: " + as.more14({1, 2, 8, 25, 1, 4, 7,  4, 1}));
+	System.out.println("tenRun with array {4, 7, 10, 1, 40, 40, 3, 6, 9, 20}: " + as.tenRun({4, 7, 10, 1, 40, 40, 3, 6, 9, 20}));
+	System.out.println("tripleUp with array {6, 7, 8, 10, 123, 124, 125, 2, 7, 5}: " + as.tripleUp({6, 7, 8, 10, 123, 124, 125, 2, 7, 5}));
+	System.out.println("canBalance with array {2, 5, 7, 0, 3, 1, 2, 8, 5, 1}: " + as.canBalance({2, 5, 7, 0, 3, 1, 2, 8, 5, 1}));
+	System.out.println("seriesUp with 23: " + as.seriesUp(23));
+	System.out.println("frequency of 9 in the array: " + as.freq(9)); 
     }
 
 }
