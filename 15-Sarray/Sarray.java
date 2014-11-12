@@ -1,17 +1,16 @@
-/* I get this error:
-Exception in thread "main" java.lang.NullPointerException
-	at Sarray.add(Sarray.java:14)
-	at Sarray.main(Sarray.java:108)
+/* IT WORKS NOW YAY 
+
 */
 
 
 public class Sarray {
     private int[] data;     
          //should be object[]
-    public Sarray(){    
+
+    public Sarray(){
 	//start array at size 10
-	// set up the initial instance variables
-	int[] data = new int[10];
+	//set up the initial instance variables
+	data = new int[10];
     }
 
     /*--------- Methods ----------*/
@@ -19,7 +18,7 @@ public class Sarray {
 	//add to int
 	//adds an item to the end of the list, grow if needed, returns true
 	if (data.length == size()){
-	    int[] temparray = new int[data.length + 5];
+	    int[] temparray = new int[data.length + 1];
 	    for (int n=0; n<data.length; n++){
 		temparray[n] = data[n];
 	    }
@@ -41,7 +40,7 @@ public class Sarray {
 	// grows as needed
 	int[] temparray;
 	if (data.length == size()){
-	    temparray = new int[data.length + 5];
+	    temparray = new int[data.length + 1];
 	}
 	else{
 	    temparray = new int[data.length];
@@ -97,6 +96,12 @@ public class Sarray {
 	return result;
     }
 
+    public void test(int index, int i){
+	if (index > size()-1){
+	    throw new ArithmeticException();
+	}
+    }
+
 
 
     public String tostring(){
@@ -123,8 +128,9 @@ public class Sarray {
 	as.add(5);
 	as.add(9,56);
 	System.out.println("Initial Array:");
-	System.out.println(as.tostring());
-	System.out.println("Size is " + as.size());
+	System.out.print(as.tostring());
+	System.out.print("Size is " + as.size() + "\n \n");
+
 	as.remove(3);
 	as.remove(6);
 	as.add(34);
@@ -133,8 +139,42 @@ public class Sarray {
 	as.add(10,3);
 	as.add(2,38);
 	System.out.println("New Array:");
-	System.out.println(as.tostring());
-	System.out.println("Size is " + as.size());
+	System.out.print(as.tostring());
+	System.out.print("Size is " + as.size() + "\n \n");
+
+	try {
+	    as.test(1,45);
+	    as.add(1,45);
+	    as.test(2,5);
+	    as.add(2,5);
+	    as.test(3,8);
+	    as.add(3,8);
+	    as.test(11,23);
+	    as.add(11,23);
+	    as.test(12,10);
+	    as.add(12,10);
+	    as.test(9,32);
+	    as.add(9,32);
+	    as.test(10,101);
+	    as.add(10,101);
+	    System.out.println("Newest Array:");
+	    System.out.print(as.tostring());
+	    System.out.print("Size is " + as.size() + "\n \n");
+	}
+	catch (ArithmeticException e){
+	    System.out.println("Arithmetic error");
+	}
+    
+	try {
+	    as.test(67,4);
+	    as.add(67,4);
+	    System.out.println("Newest-est Array:");
+	    System.out.print(as.tostring());
+	    System.out.print("Size is " + as.size() + "\n \n");
+	}
+	catch (ArithmeticException e){
+	    System.out.println("Arithmetic error while making Newest-est Array");
+	}
     }
 }
 
