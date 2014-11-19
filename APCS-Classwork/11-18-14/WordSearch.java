@@ -30,4 +30,17 @@ public class WordSearch{
 	return s;
     }
 
+    public void addWordH(String w, int row, int col){
+	int r  =row, c = col;
+	for (int i=0; i<w.length(); i++){
+	    for (int j=0; i<board.length; i++){
+		board[i][j]='.';
+	    }
+	}
+    }
+
+
+
+    public static void main (String[] args){
+    }
 }
