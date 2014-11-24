@@ -280,7 +280,7 @@ public class WordSearch{
 	*/
 
 	w.addWord("hippo");
-	w.addWord("lambourghini");
+	w.addWord("lamborghini");
 	w.addWord("scissors");
 	w.addWord("bubbles");
 
