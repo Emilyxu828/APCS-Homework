@@ -2,6 +2,10 @@
  * Creates a word search puzzle
  *
  */
+
+import java.util.*;
+import java.io.*;
+
 public class WordSearch{
     
     private char[][] board;
@@ -55,8 +59,9 @@ public class WordSearch{
 		    c = c + 1;
 	    }
 	}
-	catch (Exception e)
-	    shouldadd = false;
+	catch (Exception e){
+	    shouldAdd = false;
+	}
 	return shouldAdd;
     }
     
@@ -95,8 +100,9 @@ public class WordSearch{
 		    r = r + 1;
 	    }
 	}
-	catch (Exception e)
+	catch (Exception e){
 	    shouldAdd = false;
+	}
 	return shouldAdd;
     }
 
@@ -139,8 +145,9 @@ public class WordSearch{
 		}
 	    }
 	}
-	catch (Exception e)
+	catch (Exception e){
 	    shouldAdd = false;
+	}
 	return shouldAdd;
     }
 
@@ -149,7 +156,7 @@ public class WordSearch{
 	String w = word;
         boolean add = true;
         int lastIndex = w.length() - 1;
-	if (addWordDTest(w, r, c, direction) == true) {
+	if (addWordDUpTest(w, r, c, direction) == true) {
 	    for (int i = 0; i < w.length(); i++) {
 	        board[r][c] = w.charAt(i);
 		if (direction == 'l') {
@@ -184,8 +191,9 @@ public class WordSearch{
 		}
 	    }
 	}
-	catch (Exception e)
+	catch (Exception e){
 	    shouldAdd = false;
+	}
 	return shouldAdd;
     }
 
@@ -194,7 +202,7 @@ public class WordSearch{
 	String w = word;
         boolean add = true;
 	int lastIndex = w.length() - 1;
-	if (addWordDTest(w, r, c, direction) == true) {
+	if (addWordDDownTest(w, r, c, direction) == true) {
 	    for (int i = 0; i < w.length(); i++) {
 		board[r][c] = w.charAt(i);
 		if (direction == 'l') {
@@ -219,7 +227,7 @@ public class WordSearch{
 	char facing = '_';
 	while (canaddword == false){
 	    r = rand.nextInt(board.length);
-	    c = rand.nextInt(board[i].length);
+	    c = rand.nextInt(board[1].length);
 	    addway = rand.nextInt(4);
 	    dir = rand.nextInt(2);
 	    if (addway == 0){
@@ -228,7 +236,7 @@ public class WordSearch{
 		else 
 		    facing = 'r';
 		addWordH(w, r, c, facing);
-		canaddword = addWordHTest;
+		canaddword = addWordHTest(w, r, c, facing);
 	    }
 	    if (addway == 1){
 		if (dir == 0)
@@ -236,15 +244,15 @@ public class WordSearch{
 		else
 		    facing = 'd';
 		addWordV(w, r, c, facing);
-		canaddword = addWordVTest;
+		canaddword = addWordVTest(w, r, c, facing);
 	    }
-	    if (addway == 2)(
+	    if (addway == 2){
 		if (dir == 0)
 		    facing = 'l';
 		else
 		    facing = 'r';
 		addWordDUp(w, r, c, facing);
-		canaddword = addWordDUp;
+		canaddword = addWordDUpTest(w, r, c, facing);
 	    }
 	    else {
 		if (dir == 0)
@@ -252,7 +260,7 @@ public class WordSearch{
 		else
 		    facing = 'r';
 		addWordDDown(w, r, c, facing);
-		canaddword = addWordDDown;
+		canaddword = addWordDDownTest(w, r, c, facing);
 	    }
 	}
 	return canaddword;
