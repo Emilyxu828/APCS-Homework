@@ -32,7 +32,7 @@ public class WordSearch2{
 
     public String reverseString(String s) {
 	String news = "";
-	for (int i = s.length() - 1; i >= 0; i--) {
+	for (int i=s.length()-1; i>=0; i--) {
 	    news += s.substring(i,i+1);
 	}
 	return s;
@@ -41,55 +41,41 @@ public class WordSearch2{
     public boolean addWordHTest(String word, int row, int col, char direction) {
 	int r = row, c = col;
 	String w = word;
-	int lastIndex = w.length() - 1;
+	int lastIndex = w.length()-1;
 	boolean shouldAdd = true;
-	if (r > board.length || c > board[1].length) {
-	    shouldAdd = false;
-	} else if (direction == 'l') {
-	    if (c - lastIndex < 0) {
-		shouldAdd = false;
-	    }
-	} else if (direction == 'r') {
-	    if (board[r].length - c < w.length()) {
-		shouldAdd = false;
-	    }
-	}
-	if (shouldAdd = true){
-	    for (int i = 0; i < w.length(); i++) {
-		if (board[r][c] != '.' && board[r][c] != w.charAt(i)) {
+	try{
+	    for (int i=0; i<w.length(); i++){
+		if (board[r][c] != w.charAt(i) && board[r][c] != '.'){
 		    shouldAdd = false;
 		    break;
 		}
-		if (direction == 'l') {
-		    c--;
-		}
-		if (direction == 'r') {
-		    c++;
-		}
+		if (direction == 'l')
+		    c = c - 1;
+		if (direction == 'r')
+		    c = c + 1;
 	    }
-	} else {
-	    shouldAdd = false;
 	}
+	catch (Exception e)
+	    shouldadd = false;
 	return shouldAdd;
     }
-	    
     
     public void addWordH(String word,int row, int col, char direction){
 	int r = row, c = col;
 	String w = word;
-	boolean add = true;
-	int lastIndex = w.length() - 1;
-	if (addWordHTest(w, r, c, direction) == true) {
+        boolean add = true;
+        int lastIndex = w.length()-1;
+        if (addWordHTest(w, r, c, direction) == true) {
 	    for (int i = 0; i < w.length(); i++) {
-		board[r][c] = w.charAt(i);
-		if (direction == 'l') {
+	        board[r][c] = w.charAt(i);
+	        if (direction == 'l') {
 		    c--;
 		}
-		if (direction == 'r') {
+	        if (direction == 'r') {
 		    c++;
 		}
-	    }
-	} 
+	    } 
+	}
     }
     
     public boolean addWordVTest(String word, int row, int col, char direction) {
@@ -97,144 +83,187 @@ public class WordSearch2{
 	String w = word;
 	int lastIndex = w.length() - 1;
 	boolean shouldAdd = true;
-	if (r > board.length || c > board[1].length) {
-	    shouldAdd = false;
-	} else if (direction == 'u') {
-	    if (r - lastIndex < 0) {
-		shouldAdd = false;
-	    }
-	} else if (direction == 'd') {
-	    if (board.length - r < w.length()) {
-		shouldAdd = false;
-	    }
-	}
-	if (shouldAdd = true) {
-	    for (int i = 0; i < w.length(); i++) {
-		if (board[r][c] != '.' && board[r][c] != w.charAt(i)) {
+	try {
+	    for (int i=0; i<w.length(); i++){
+		if (board[r][c] != w.charAt(i) && board[r][c] != '.'){
 		    shouldAdd = false;
 		    break;
-		}
-		if (direction == 'u') {
-		    r--;
-		}
-		if (direction == 'd') {
-		    r++;
-		}    
+	        }
+		if (direction == 'u')
+		    r = r - 1;
+		if (direction == 'd')
+		    r = r + 1;
 	    }
-	} else {
-	    shouldAdd = false;
 	}
+	catch (Exception e)
+	    shouldAdd = false;
 	return shouldAdd;
     }
 
     public void addWordV(String word,int row, int col, char direction){
 	int r = row, c = col;
 	String w = word;
-	boolean add = true;
+        boolean add = true;
 	int lastIndex = w.length() - 1;
 	if (addWordVTest(w, r, c, direction) == true) {
 	    for (int i = 0; i < w.length(); i++) {
 		board[r][c] = w.charAt(i);
 		if (direction == 'u') {
 		    r--;
-		}
+	        }
 		if (direction == 'd') {
 		    r++;
 		}
-	    }
-	} 
+	    } 
+	}
     }
 
-    public boolean addWordDTest(String word, int row, int col, char direction) {
+    public boolean addWordDUpTest(String word, int row, int col, char direction) {
 	int r = row, c = col;
 	String w = word;
 	int lastIndex = w.length() - 1;
 	boolean shouldAdd = true;
-	boolean testRight = board[r].length - c < w.length();
-	boolean testUp = r - lastIndex < 0;
-	boolean testLeft = c - lastIndex < 0;
-	boolean testDown = board.length - r < w.length(); 
-	if (r > board.length || c > board[1].length) {
-	    shouldAdd = false;
-	} else if (direction == 'b') {
-	    if (testRight || testUp) {
-		shouldAdd = false;
-	    }
-	} else if (direction == 'c') {
-	    if (testRight || testDown) {
-		shouldAdd = false;
-	    }
-	} else if (direction == 'a') {
-	    if (testLeft || testUp) {
-		shouldAdd = false;
-	    }
-	} else if (direction == 'd') {
-	    if (testLeft || testDown) {
-		shouldAdd = false;
-	    }
-	}
-	if (shouldAdd = true) {
-	    for (int i = 0; i < w.length(); i++) {
-		if (board[r][c] != '.' && board[r][c] != w.charAt(i)) {
+	try {
+	    for (int i=0; i<w.length(); i++){
+		if (board[r][c] != w.charAt(i) && board[r][c] != '.'){
 		    shouldAdd = false;
 		    break;
 		}
-		if (direction == 'c') {
-		    c++;
-		    r++;
+		if (direction == 'l'){
+		    r = r - 1;
+		    c = c - 1;
 		}
-		if (direction == 'b') {
-		    c++;
-		    r--;
-		}
-		if (direction == 'd') {
-		    c--;
-		    r++;
-		}
-		if (direction == 'a') {
-		    c--;
-		    r--;
+		if (direction == 'r'){
+		    r = r - 1;
+		    c = c + 1;
 		}
 	    }
-	} else {
-	    shouldAdd = false;
 	}
+	catch (Exception e)
+	    shouldAdd = false;
 	return shouldAdd;
     }
 
-    public void addWordD(String word,int row, int col, char direction){
+    public void addWordDUp(String word,int row, int col, char direction){
 	int r = row, c = col;
 	String w = word;
-	boolean add = true;
+        boolean add = true;
+        int lastIndex = w.length() - 1;
+	if (addWordDTest(w, r, c, direction) == true) {
+	    for (int i = 0; i < w.length(); i++) {
+	        board[r][c] = w.charAt(i);
+		if (direction == 'l') {
+		    c++;
+		    r++;
+	        }
+		if (direction == 'r') {
+		    c++;
+		    r--;
+		}
+	    }  
+	}
+    }
+    public boolean addWordDDownTest(String word, int row, int col, char direction) {
+	int r = row, c = col;
+	String w = word;
+	int lastIndex = w.length() - 1;
+	boolean shouldAdd = true;
+	try {
+	    for (int i=0; i<w.length(); i++){
+		if (board[r][c] != w.charAt(i) && board[r][c] != '.'){
+		    shouldAdd = false;
+		    break;
+		}
+		if (direction == 'l'){
+		    r = r + 1;
+		    c = c - 1;
+		}
+		if (direction == 'r'){
+		    r = r + 1;
+		    c = c + 1;
+		}
+	    }
+	}
+	catch (Exception e)
+	    shouldAdd = false;
+	return shouldAdd;
+    }
+
+    public void addWordDDown(String word,int row, int col, char direction){
+	int r = row, c = col;
+	String w = word;
+        boolean add = true;
 	int lastIndex = w.length() - 1;
 	if (addWordDTest(w, r, c, direction) == true) {
 	    for (int i = 0; i < w.length(); i++) {
 		board[r][c] = w.charAt(i);
-		if (direction == 'c') {
-		    c++;
-		    r++;
-		}
-		if (direction == 'b') {
+		if (direction == 'l') {
 		    c++;
 		    r--;
 		}
-		if (direction == 'd') {
-		    c--;
+		if (direction == 'r') {
+		    c++;
 		    r++;
-		}
-		if (direction == 'a') {
-		    c--;
-		    r--;
 		}
 	    }
 	}  
+    }
+
+
+    public boolean addWord(String w){
+	Random rand = new Random();
+	int r, c;
+	boolean canaddword = false;
+	int addway;
+	int dir;
+	char facing = '_';
+	while (canaddword == false){
+	    r = rand.nextInt(board.length);
+	    c = rand.nextInt(board[i].length);
+	    addway = rand.nextInt(4);
+	    dir = rand.nextInt(2);
+	    if (addway == 0){
+		if (dir == 0)
+		    facing = 'l';
+		else 
+		    facing = 'r';
+		addWordH(w, r, c, facing);
+		canaddword = addWordHTest;
+	    }
+	    if (addway == 1){
+		if (dir == 0)
+		    facing = 'u';
+		else
+		    facing = 'd';
+		addWordV(w, r, c, facing);
+		canaddword = addWordVTest;
+	    }
+	    if (addway == 2)(
+		if (dir == 0)
+		    facing = 'l';
+		else
+		    facing = 'r';
+		addWordDUp(w, r, c, facing);
+		canaddword = addWordDUp;
+	    }
+	    else {
+		if (dir == 0)
+		    facing = 'l';
+		else
+		    facing = 'r';
+		addWordDDown(w, r, c, facing);
+		canaddword = addWordDDown;
+	    }
+	}
+	return canaddword;
     }
 
     public static void main(String[] args) {
 	WordSearch2 w = new WordSearch2();
 	System.out.println("Blank Board: ");
 	System.out.println(w);
-	w.addWordH("hello",3,12,'r');
+
+	/*	w.addWordH("hello",3,12,'r');
 	w.addWordH("look",3,15,'r');
 	w.addWordH("bike",3,5,'r');
 	w.addWordH("keylhpe",3,7,'r');
@@ -248,6 +277,13 @@ public class WordSearch2{
 	//	w.addWordD("triangle",18,12,'c');
 	//w.addWordH("hello",100,5);
 	//w.addWordH("hello",30,555);
+	*/
+
+	w.addWord("hippo");
+	w.addWord("lambourghini");
+	w.addWord("scissors");
+	w.addWord("bubbles");
+
 	System.out.println("After Adding: ");
 	System.out.println(w);
     }
