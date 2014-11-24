@@ -2,11 +2,11 @@
  * Creates a word search puzzle
  *
  */
-public class WordSearch2{
+public class WordSearch{
     
     private char[][] board;
     
-    public WordSearch2(int r, int c){
+    public WordSearch(int r, int c){
 	board = new char[r][c];
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
@@ -15,7 +15,7 @@ public class WordSearch2{
 	}
 	
     }
-    public WordSearch2(){
+    public WordSearch(){
 	this(20,30);
     }
     
@@ -259,7 +259,7 @@ public class WordSearch2{
     }
 
     public static void main(String[] args) {
-	WordSearch2 w = new WordSearch2();
+	WordSearch w = new WordSearch();
 	System.out.println("Blank Board: ");
 	System.out.println(w);
 
