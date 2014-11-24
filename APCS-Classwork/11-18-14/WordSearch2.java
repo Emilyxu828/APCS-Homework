@@ -6,11 +6,11 @@
 import java.util.*;
 import java.io.*;
 
-public class WordSearch{
+public class WordSearch2{
     
     private char[][] board;
     
-    public WordSearch(int r, int c){
+    public WordSearch2(int r, int c){
 	board = new char[r][c];
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
@@ -19,7 +19,7 @@ public class WordSearch{
 	}
 	
     }
-    public WordSearch(){
+    public WordSearch2(){
 	this(20,30);
     }
     
@@ -267,7 +267,7 @@ public class WordSearch{
     }
 
     public static void main(String[] args) {
-	WordSearch w = new WordSearch();
+	WordSearch2 w = new WordSearch2();
 	System.out.println("Blank Board: ");
 	System.out.println(w);
 
