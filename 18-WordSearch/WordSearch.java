@@ -272,9 +272,9 @@ public class WordSearch{
 	int y;
 	for (int i=0; i<board.length; i++){
 	    for (int q=0; q<board[1].length; q++){
-		if {board[i][q] == '.'){
+		if (board[i][q] == '.'){
 		    y = rand.nextInt(26);
-		    board[i][q] = letter[y];
+		    board[i][q] = letters[y];
 		}
 	    }
 	}
