@@ -266,6 +266,20 @@ public class WordSearch{
 	return canaddword;
     }
 
+    public void fillboard(){
+	char[] letters = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'};
+	Random rand = new Random();
+	int y;
+	for (int i=0; i<board.length; i++){
+	    for (int q=0; q<board[1].length; q++){
+		if {board[i][q] == '.'){
+		    y = rand.nextInt(26);
+		    board[i][q] = letter[y];
+		}
+	    }
+	}
+    }
+
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
 	System.out.println("Blank Board: ");
@@ -293,6 +307,10 @@ public class WordSearch{
 	w.addWord("bubbles");
 
 	System.out.println("After Adding: ");
+	System.out.println(w);
+
+	w.fillboard();
+	System.out.println("Completed Board: ");
 	System.out.println(w);
     }
 }
