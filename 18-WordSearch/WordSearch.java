@@ -301,10 +301,27 @@ public class WordSearch{
 	//w.addWordH("hello",30,555);
 	*/
 
-	w.addWord("hippo");
+	/*	w.addWord("hippo");
 	w.addWord("lamborghini");
 	w.addWord("scissors");
 	w.addWord("bubbles");
+	*/
+
+	ArrayList<String> wlist = new ArrayList<String>();
+	Scanner sc=null;
+	try {
+	    sc = new Scanner(new File("words.txt"));
+      	} catch (Exception e) {
+	    System.out.println("Can't open file");
+	    System.exit(0);
+	}
+       	while (sc.hasNext()) {
+	    String s = sc.next();
+	    w.addWord(s);
+	    wlist.add(s);
+        }
+
+	System.out.println("List of Words: " + wlist + "\n");
 
 	System.out.println("After Adding: ");
 	System.out.println(w);
@@ -312,5 +329,6 @@ public class WordSearch{
 	w.fillboard();
 	System.out.println("Completed Board: ");
 	System.out.println(w);
+
     }
 }
