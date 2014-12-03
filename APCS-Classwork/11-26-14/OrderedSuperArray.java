@@ -1,8 +1,31 @@
-public class OrderedSuperArray extend Sarray {
+public class OrderedSuperArray extends Sarray {
 
-    //data is an array! OrderedSuperArray?!
+    public void oadd(String e){
+	for (int i=0; i<size(); i++){
+	    if (e.compareTo(get(i))<0){
+		super.add(i,e);
+	    }
+	}
+    }
+    public String tostring(){
+	return super.tostring();
+    }
 
-    public void add(String e){
+    public static void main (String[] args){
+	OrderedSuperArray osa = new OrderedSuperArray();
+	Sarray sa = new Sarray();
+	osa.oadd("a");
+	osa.oadd("b");
+	osa.oadd("z");
+	osa.oadd("x");
+	System.out.println(osa.tostring());
+    }
+}
+
+
+
+/*
+ public void add(String e){
 	String thisword;
 	for (int i=0; i<OrderedSuperArray.size(); i++){
 	    thisword = OrderedSuperArray.get(i);
@@ -14,7 +37,4 @@ Ordered
 
 
     }
-
-    public static void main (String[] args){
-    }
-}
+*/
