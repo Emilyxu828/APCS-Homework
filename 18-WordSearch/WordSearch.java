@@ -160,8 +160,8 @@ public class WordSearch{
 	    for (int i = 0; i < w.length(); i++) {
 	        board[r][c] = w.charAt(i);
 		if (direction == 'l') {
-		    c++;
-		    r++;
+		    c--;
+		    r--;
 	        }
 		if (direction == 'r') {
 		    c++;
@@ -182,8 +182,8 @@ public class WordSearch{
 		    break;
 		}
 		if (direction == 'l'){
-		    r = r + 1;
-		    c = c - 1;
+		    r = r - 1;
+		    c = c + 1;
 		}
 		if (direction == 'r'){
 		    r = r + 1;
@@ -238,7 +238,7 @@ public class WordSearch{
 		addWordH(w, r, c, facing);
 		canaddword = addWordHTest(w, r, c, facing);
 	    }
-	    if (addway == 1){
+	    else if (addway == 1){
 		if (dir == 0)
 		    facing = 'u';
 		else
@@ -246,7 +246,7 @@ public class WordSearch{
 		addWordV(w, r, c, facing);
 		canaddword = addWordVTest(w, r, c, facing);
 	    }
-	    if (addway == 2){
+	    else if (addway == 2){
 		if (dir == 0)
 		    facing = 'l';
 		else
