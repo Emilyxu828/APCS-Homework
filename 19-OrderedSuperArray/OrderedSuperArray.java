@@ -1,31 +1,34 @@
 public class OrderedSuperArray extends Sarray {
 
-    public void add(String e){
+    public boolean add(String e){
 	for (int i=0; i<size(); i++){
 	    if (e.compareTo(get(i))<0){
 		super.add(i,e);
 	    }
 	}
+	return true;
     }
 
     public String set(int index, String s){
-	super.remove(i);
+	String result= get(index);
+	super.remove(index);
 	add(s);
+	return result;
     }
-
+    
     public String tostring(){
 	return super.tostring();
-    }
+	}
 
     public static void main (String[] args){
 	OrderedSuperArray osa = new OrderedSuperArray();
 	Sarray sa = new Sarray();
-	osa.add("aisforapple");
+        osa.add("aisforapple");
 	osa.add("bisforbanana");
 	osa.add("z");
 	osa.add("x");
 	System.out.println("Initial Ordered Array:");
-	System.out.println(osa.tostring());
+	//	System.out.println(osa.tostring);
 
 	osa.set(0,"eisforomelette");
 	osa.set(3,"whaddappp");
