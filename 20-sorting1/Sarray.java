@@ -109,8 +109,8 @@ public class Sarray {
 	String word1;
 	for (int q=0; q<size(); q++){
 	    word1 = data[q];
-	    data[q] = 0;
-	    for (int i=data.length-1; i>0 && word1.compareTo(data[i])<0; i--){
+	    int i;
+	    for (i=data.length-2; i>0 && word1.compareTo(data[i])<0; i--){
 		data[i+1] = data[i];
 	    }
 	    data[i] = word1;
@@ -135,6 +135,9 @@ public class Sarray {
 	System.out.print(as.tostring());
 	System.out.print("Size is " + as.size() + "\n \n");
 
+	as.isort();
+	System.out.println("New:");
+	System.out.print(as.tostring());
 	/*	as.remove(3);
 	as.remove(6);
 	as.add(34);
