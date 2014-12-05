@@ -17,7 +17,7 @@ public class OrderedSuperArray extends Sarray {
     }
 
     public String set(int index, String s){
-	String result= get(index);
+	String result = get(index);
 	super.remove(index);
 	add(s);
 	return result;
