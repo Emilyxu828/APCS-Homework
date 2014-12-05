@@ -17,12 +17,10 @@ public class OrderedSuperArray extends Sarray {
     }
 
     public String set(int index, String s){
-	super.remove(i);
+	String result = get(index);
+	super.remove(index);
 	add(s);
-    }
-
-    public String tostring(){
-	return super.tostring();
+	return result;
     }
 
     public static void main (String[] args){
