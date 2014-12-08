@@ -1,4 +1,4 @@
-public class Sarray {
+ public class Sarray {
     private String[] data;     
          //should be object[]
 
@@ -186,7 +186,9 @@ public class Sarray {
 	System.out.print(as.tostring());
 	System.out.print("Size is " + as.size() + "\n \n");
 
-	as.isort();
+	//	as.isort();
+	//	as.ssort();
+	//	as.bsort();
 	System.out.println("New:");
 	System.out.print(as.tostring());
 	/*	as.remove(3);
