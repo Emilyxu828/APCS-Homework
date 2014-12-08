@@ -110,17 +110,14 @@ public class Sarray {
 	for (int q=0; q<size(); q++){
 	    word1 = data[q];
 	    int i;
-	    for (i=data.length-1; i>0 && word1.compareTo(data[i])<0; i--){
-
-		data[i] = data[i-1];
+	    for (i=q-1; i>=0 && word1.compareTo(data[i])<0; i--){
+		data[i+1] = data[i];
 	    }
-	    data[i] = word1;
+	    data[i+1] = word1;
 	}
 
     }
 
-    public void ssort(){
-    }
 
     public static void main (String args[]){
 	Sarray as = new Sarray();
