@@ -105,16 +105,15 @@
 	return s;	    
     }
 
-    public void isort(){          //***
+    public void isort(){        
 	String word1;
 	for (int q=0; q<size(); q++){
 	    word1 = data[q];
 	    int i;
-	    for (i=data.length-1; i>0 && word1.compareTo(data[i])<0; i--){
-
-		data[i] = data[i-1];
+	    for (i=q-1; i>=0 && word1.compareTo(data[i])<0; i--){
+		data[i+1] = data[i];
 	    }
-	    data[i] = word1;
+	    data[i+1] = word1;
 	}
 
     }
@@ -186,7 +185,7 @@
 	System.out.print(as.tostring());
 	System.out.print("Size is " + as.size() + "\n \n");
 
-	//	as.isort();
+       	as.isort();
 	//	as.ssort();
 	//	as.bsort();
 	System.out.println("New:");
