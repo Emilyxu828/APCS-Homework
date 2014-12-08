@@ -1,3 +1,5 @@
+import java.util.*;
+
  public class Sarray {
     private String[] data;     
          //should be object[]
@@ -169,6 +171,10 @@
 	    }*/
     }
 
+     public void builtinsort(){
+	 Arrays.sort(data);
+     }
+
     public static void main (String args[]){
 	Sarray as = new Sarray();
        	as.add("alice");
@@ -185,9 +191,10 @@
 	System.out.print(as.tostring());
 	System.out.print("Size is " + as.size() + "\n \n");
 
-       	//as.isort();
+       	as.isort();
 	//as.ssort();
 	//as.bsort();
+	//as.builtinsort();
 	System.out.println("New:");
 	System.out.print(as.tostring());
 	/*	as.remove(3);
