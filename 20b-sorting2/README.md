@@ -1,9 +1,9 @@
 Times for different sort methods:
 
-isort:					<\n>
-real	0m0.064s			\n
-user	0m0.055s			\n
-sys	0m0.013s			\n
+isort:					<br>
+real	0m0.064s			<br>
+user	0m0.055s			<br>
+sys	0m0.013s			<br>
 
 ssort:					\n
 real	0m0.058s			\n
