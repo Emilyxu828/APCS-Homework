@@ -1,6 +1,6 @@
 Times for different sort methods:
 
-isort:					\n
+isort:					<\n>
 real	0m0.064s			\n
 user	0m0.055s			\n
 sys	0m0.013s			\n
