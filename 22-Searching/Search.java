@@ -18,7 +18,7 @@ public class Search{
 	return result;
     }
 
-    public void additem(String item){
+    public void additem(Comparable item){
 	Comparable[] temparray;
 	if (a.length == size()){
 	    temparray = new Comparable[a.length + 1];
@@ -96,7 +96,7 @@ public class Search{
 
     public static void main(String[] args){
 	Search wahoo = new Search(5);
-	String[] words = {"hello", "goodbye", "a", "b", "c", "juice", "nose", "paper"};
+	Comparable[] words = {"hello", "goodbye", "a", "b", "c", "juice", "nose", "paper"};
 	for (int i=0; i<words.length; i++)
 	    wahoo.additem(words[i]);
 	System.out.println("before: " + wahoo.tostring());
