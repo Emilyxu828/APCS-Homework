@@ -1,0 +1,15 @@
+https://github.com/daisyb/ETR
+
+Scramble.java:
+[I like this puzzle part a lot! :) ]
+- You might want to make the pieces bigger and the highlighting thicker to make it easier to see (We talked about this already) 
+- You should adjust the window size so everything fits on the school computers
+
+
+Drawer.java:
+*this part isn't finished yet
+- (44) "foundslip" typo
+- (69) "getContentPane" typo
+- Just checking - The scissors will be in Drawer1 and the phone and slip won't?
+
+I'm looking forward to play your project when it's finished!
