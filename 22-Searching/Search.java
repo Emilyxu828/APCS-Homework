@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 public class Search{
     private Comparable[] a;
 
@@ -15,7 +18,7 @@ public class Search{
 	return result;
     }
 
-    public void additem(String item){
+    public void additem(Comparable item){
 	Comparable[] temparray;
 	if (a.length == size()){
 	    temparray = new Comparable[a.length + 1];
@@ -36,7 +39,7 @@ public class Search{
     }
 
     public Comparable lsearch(Comparable item){       //linear search
-	String q = null;
+        Comparable q = null;
 	for (int i=0; i<a.length; i++){
 	    if (item.equals(a[i])){
 		q = item;
@@ -50,7 +53,7 @@ public class Search{
 	int low = 0;
 	int high = a.length;
 	int mid = (low+high)/2;
-	String q = null;
+	Comparable q = null;
 	for (int i=0; i<a.length; i++){
 	    if (item.compareTo(a[low])==0 || item.compareTo(a[mid])==0 || item.compareTo(a[high])==0){
 		q = item;
@@ -69,7 +72,7 @@ public class Search{
 
     public Comparable rbsearch(Comparable item, int low, int high){       //recursive binary search
 	int mid = (low+high)/2;
-	String q= null;
+        Comparable q= null;
 	if (item.compareTo(a[low])==0 || item.compareTo(a[mid])==0 || item.compareTo(a[high])==0){
 	    q = item;
 	    return q;
@@ -92,9 +95,8 @@ public class Search{
     }
 
     public static void main(String[] args){
-	Search wahoo = new Search();
-	wahoo.Searching(5);
-	String[] words = {"hello", "goodbye", "a", "b", "c", "juice", "nose", "paper"};
+	Search wahoo = new Search(5);
+	Comparable[] words = {"hello", "goodbye", "a", "b", "c", "juice", "nose", "paper"};
 	for (int i=0; i<words.length; i++)
 	    wahoo.additem(words[i]);
 	System.out.println("before: " + wahoo.tostring());
@@ -103,7 +105,7 @@ public class Search{
 
 	System.out.println(wahoo.lsearch("hello"));
 	System.out.println(wahoo.bsearch("goodbye"));
-	System.out.println(wahoo.rbsearch("c", 0, a.length));
+	System.out.println(wahoo.rbsearch("c", 0, wahoo.size()));
     }
 
 }
